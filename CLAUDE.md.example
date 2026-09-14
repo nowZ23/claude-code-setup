@@ -1,0 +1,29 @@
+# CLAUDE.md, exemple de mémoire globale
+
+Ce fichier va dans `~/.claude/CLAUDE.md`. Il est lu au début de chaque session, quel que soit le projet. Adapte les règles ci-dessous à ta situation : elles sont fournies comme un exemple concret de ce qu'on peut y mettre, pas comme un standard à copier tel quel.
+
+Si tu utilises browser-harness (voir README), tu peux importer son SKILL.md ici :
+```
+@~/Developer/browser-harness/SKILL.md
+```
+
+## Journal d'événements (règle permanente)
+
+Comportement permanent : **dès qu'un événement concret se produit ou est constaté** pendant une session, enregistre-le dans le vault sans qu'on te le demande et silencieusement, soit en mettant à jour la note existante concernée, soit en en créant une si aucune ne convient. N'annonce pas chaque log ni ne demande confirmation : fais-le en arrière-plan, au fil de l'eau, sans le mentionner dans ta réponse (sauf si on te demande où c'est noté, ou si le log lui-même mérite une remarque).
+
+**C'est ton jugement qui décide.** Logge seulement si ça **change quelque chose** ou **a besoin d'être retenu** entre sessions : changement d'état, résultat, décision, jalon, chiffre, retour reçu, seuil/deadline, bug trouvé/corrigé, livrable envoyé, blocage. Ne logge **pas** ce qui ne change rien ou se retrouve trivialement : réflexion en cours sans conclusion, allers-retours de formulation, questions de clarif, faits déjà consignés. Dans le doute sur l'intérêt durable, abstiens-toi plutôt que de polluer le vault.
+
+**Procédure** : trouve la note la plus pertinente (`work/active/` pour un projet, la fiche personne pour du réseau, `brain/` pour une décision/pattern/piège) et ajoute une ligne **datée** ; sinon crée une note atomique au bon endroit. Respecte les conventions du vault (frontmatter préservé, `[[wikilinks]]`, un concept = une note, mets à jour l'index si nouvelle note).
+
+## Réflexes d'exécution, pré-vol (règle permanente)
+
+Avant toute action outillée (browser, fichiers, envoi, publication), charge la recette **AVANT** le premier geste plutôt que de la redécouvrir après la friction. Voici des réflexes à passer d'office (adapte-les à ton propre historique d'erreurs, gardé dans un fichier type `brain/Self-Critique.md`) :
+
+1. **Clics browser / modales** : pas de clic « à l'estime » sur un screenshot. Convertis les pixels avec le facteur d'échelle imprimé par le harness (image vers CSS). Sur une modale ou un portal, fie-toi au DOM sur le target attaché plutôt qu'au screenshot (les rects peuvent être dans un repère décalé), et vérifie l'état après le premier clic.
+2. **Vérifier par le RÉSULTAT, groupé** : un toast ou un retour d'appel « ok » n'est pas une preuve. Contrôle par la vérité terrain (compteur officiel, lecture DOM, échantillon indépendant) et regroupe les vérifications au lieu d'avancer par petits pas timides.
+3. **Isoler ton environnement de navigateur perso.** Pour tout travail browser automatisé : ne jamais utiliser ton Chrome personnel ni un profil qui a fini par accumuler tes vrais logins au fil de l'usage. Le réflexe correct, systématique, sans exception : lance ta propre instance Chrome dédiée, profil et port que tu choisis toi-même (`--user-data-dir` neuf sous un dossier temporaire, `--remote-debugging-port` libre), jamais un profil qui contient déjà une session perso. Si une tâche exige un compte connecté, ouvre la page de login dans l'instance isolée et laisse l'humain taper ses identifiants lui-même dedans. Tue l'instance et nettoie le profil temporaire une fois la tâche finie. Piège classique : se connecter à un compte Google dans cette instance peut déclencher une synchronisation Chrome et y rapatrier de vrais modules/extensions (portefeuille crypto, gestionnaire de mots de passe), l'instance cesse alors d'être isolée dès la connexion.
+4. **Pré-vol sur ce qui sort ou est irréversible** : avant un envoi, une publication ou une suppression, balaie qui tu cibles, les données de tiers visibles (PII) et le gating payant (vraiment inclus ou réservé au payant). Cet audit se fait **au moment de soumettre**, pas en rétrospective.
+
+## Économie de la limite d'usage (règle permanente)
+
+Quand on change complètement de sujet en pleine session (nouveau projet sans rapport avec la conversation en cours), suggère en une ligne de faire `/clear` avant de continuer : le contexte accumulé est refacturé à chaque message et brûle la limite d'usage pour rien. Ne le suggère pas si le nouveau sujet dépend du contexte courant. Le vault Obsidian sert de mémoire entre les sessions, rien ne se perd.
