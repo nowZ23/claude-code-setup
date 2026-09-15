@@ -4,7 +4,7 @@ description: "Cadre un nouveau projet AVANT de coder : scope (in/out), arboresce
 
 Cadre le projet **avant** de produire quoi que ce soit. Sujet dans `$ARGUMENTS` ; si vide, demande en une ligne « c'est quoi le projet ? » (nom + en une phrase ce que ça fait).
 
-**Chemin du vault :** `~/.claude/obsidian-vault.path` (défaut `~/Documents/Claude/obsidian-mind`). Lançable depuis n'importe quel projet.
+**Chemin du vault :** `~/.claude/obsidian-vault.path`. Si ce fichier n'existe pas, demande le chemin du vault à l'utilisateur avant d'écrire quoi que ce soit (voir README). Lançable depuis n'importe quel projet.
 
 ## 1. Comprends en 1 passe
 Reformule le projet en une phrase + **qui l'utilise / quel résultat**. Si un flou change la structure (type d'app, plateforme, y a-t-il un back ?), pose **une** question de cadrage groupée, pas plus.

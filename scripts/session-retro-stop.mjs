@@ -19,8 +19,9 @@ const { session_id, transcript_path, cwd, stop_hook_active } = data;
 if (stop_hook_active) exit0();
 if (!session_id || !transcript_path || !fs.existsSync(transcript_path)) exit0();
 
-let VAULT = path.join(os.homedir(), 'Documents', 'Claude', 'obsidian-mind');
+let VAULT = null;
 try { const p = fs.readFileSync(path.join(os.homedir(), '.claude', 'obsidian-vault.path'), 'utf8').trim(); if (p) VAULT = p; } catch {}
+if (!VAULT) exit0(); // pas de vault configuré : rien à écrire, voir README
 
 const markerDir = path.join(os.homedir(), '.claude', '.session-retro');
 try { fs.mkdirSync(markerDir, { recursive: true }); } catch {}

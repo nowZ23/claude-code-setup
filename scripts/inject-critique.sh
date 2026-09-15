@@ -4,7 +4,8 @@
 # jamais repartir de zéro ni répéter les erreurs passées — même quand la
 # session démarre hors du dossier du vault.
 VAULT=$(cat ~/.claude/obsidian-vault.path 2>/dev/null)
-VAULT="${VAULT:-$HOME/Documents/Claude/obsidian-mind}"
+# Pas de repli codé en dur : sans ~/.claude/obsidian-vault.path, les gardes
+# -d / -f ci-dessous sont fausses et le hook reste simplement silencieux.
 
 # --- 0. Orientation : où est le cerveau externe -----------------------------
 if [ -d "$VAULT" ]; then

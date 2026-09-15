@@ -6,7 +6,7 @@ Génère une **rétrospective honnête de la session en cours** et stocke-la dan
 
 **Principe de coût (cette commande doit elle-même être bon marché) :** ne lis JAMAIS `_Retros.md` en entier ni tout `Self-Critique.md`, ce sont de gros fichiers relus à chaque rétro. Lis par tranches ciblées (`grep`, `sed`, anchors) et écris court. La friction est la partie précieuse, le reste est bref.
 
-**Chemin du vault :** `~/.claude/obsidian-vault.path` (défaut `~/Documents/Claude/obsidian-mind` ; le fichier fait foi). Lançable depuis n'importe quel projet.
+**Chemin du vault :** `~/.claude/obsidian-vault.path`. Si ce fichier n'existe pas, demande le chemin du vault à l'utilisateur avant d'écrire quoi que ce soit (voir README). Lançable depuis n'importe quel projet.
 
 ## 0. Gate de trivialité (à évaluer EN PREMIER)
 Une session est **triviale** si : peu de tours utilisateur (~≤2), **aucune friction** et rien de durable produit (méta, test, question isolée). Si triviale, **rétro ultra-courte** : frontmatter + 3-4 lignes max (contexte + la seule observation utile), saute les sections 2 en détail, ne déroule pas 6 rubriques sur du vide. Distille quand même en §4 **s'il y a** une vraie leçon. Sinon, session **substantielle** : suis tout ci-dessous.

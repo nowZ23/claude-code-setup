@@ -23,7 +23,7 @@ function vaultPath() {
     const p = fs.readFileSync(path.join(os.homedir(), '.claude', 'obsidian-vault.path'), 'utf8').trim();
     if (p) return p;
   } catch {}
-  return path.join(os.homedir(), 'Documents', 'Claude', 'obsidian-mind');
+  return null; // pas de vault configuré : voir README
 }
 const VAULT = vaultPath();
 const ok = () => process.exit(0);
@@ -92,7 +92,7 @@ if (MODE === 'stop') {
   const ti = data.tool_input || {};
   const fp = ti.file_path || '';
   if (!/\.(md|txt|markdown)$/i.test(fp)) ok();
-  if (fp.startsWith(VAULT)) ok();              // notes internes : hors périmètre
+  if (VAULT && fp.startsWith(VAULT)) ok();              // notes internes : hors périmètre
   chunks = [ti.content || ti.new_string || ''];
   where = fp;
 }

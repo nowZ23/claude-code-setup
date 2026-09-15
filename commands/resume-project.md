@@ -4,7 +4,7 @@ description: "Charge le contexte d'un projet actif depuis le vault Obsidian et f
 
 Reprends le travail sur le projet donné en `$ARGUMENTS` (nom du projet) ; si vide, demande en une ligne « quel projet ? ».
 
-**Chemin du vault** : lis-le dans `~/.claude/obsidian-vault.path` et utilise-le pour tous les chemins ci-dessous (défaut `~/Documents/Claude/obsidian-mind` ; si le fichier indique autre chose, c'est lui qui fait foi). Cette commande peut être lancée depuis n'importe quel projet.
+**Chemin du vault** : lis-le dans `~/.claude/obsidian-vault.path` et utilise-le pour tous les chemins ci-dessous. Si ce fichier n'existe pas, demande le chemin du vault à l'utilisateur avant d'écrire quoi que ce soit (voir README). Cette commande peut être lancée depuis n'importe quel projet.
 
 ## 1. Charge le contexte
 Cherche et lis la note projet correspondante (ex. `work/active/<Nom du projet>.md` ou `Projects/<Nom du projet>.md`).

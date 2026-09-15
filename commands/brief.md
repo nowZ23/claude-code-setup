@@ -4,7 +4,7 @@ description: "Avant tout visuel/design (post, artifact, landing, slide), génèr
 
 Ne fixe jamais l'écran blanc : produis d'abord le **brief créatif**, puis seulement on design. Objet dans `$ARGUMENTS` ; si vide, demande en une ligne « on design quoi ? ».
 
-**Chemin du vault :** `~/.claude/obsidian-vault.path` (défaut `~/Documents/Claude/obsidian-mind`).
+**Chemin du vault :** `~/.claude/obsidian-vault.path`. Si ce fichier n'existe pas, demande le chemin du vault à l'utilisateur avant d'écrire quoi que ce soit (voir README).
 
 ## 1. Cale-toi (léger)
 - Registre / voix : si tu as des règles de style déjà injectées en session, respecte le registre voulu (`brain/Voix & Outreach.md` au besoin).
