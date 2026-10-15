@@ -59,6 +59,17 @@ Ces trois scripts lisent `~/.claude/obsidian-vault.path`, donc portables d'une m
 - **`/relances`** : scanne Gmail (lecture seule) pour les fils qui attendent une réponse et les priorise. Nécessite le MCP Gmail.
 - **`/resume-project <nom>`** : recharge le contexte d'un projet actif depuis le vault et fait un point d'état, prêt à continuer.
 
+## 4 bis. Routeur de modèle (`model-router.zsh`)
+
+Un wrapper zsh autour de `claude` : il étudie la mission annoncée au lancement (mots-clés, puis un mini-appel Haiku si c'est ambigu) et choisit le modèle (haiku / sonnet / opus) et l'effort (low → max). Objectif : ne pas brûler d'Opus ni de réflexion sur une tâche légère.
+
+Installation : ajoute à ton `~/.zshrc` :
+```bash
+[ -f "$HOME/.claude/scripts/model-router.zsh" ] && source "$HOME/.claude/scripts/model-router.zsh"
+```
+
+Usage : `claude "ma mission"` ou `claude @o ...` pour forcer Opus (`@s` Sonnet, `@h` Haiku), `claude !x ...` pour forcer l'effort. `claude-route "texte"` affiche le choix sans rien lancer. Les mots-clés (FR/EN) sont dans le script : adapte-les à tes propres tâches.
+
 ## 5. Plugins et marketplaces
 
 Ajoutés via `/plugin marketplace add` dans Claude Code :
@@ -94,8 +105,8 @@ git clone https://github.com/nowZ23/claude-code-setup.git
 cd claude-code-setup
 
 mkdir -p ~/.claude/scripts ~/.claude/commands
-cp scripts/*.sh scripts/*.mjs ~/.claude/scripts/
-chmod +x ~/.claude/scripts/*.sh ~/.claude/scripts/*.mjs
+cp scripts/*.sh scripts/*.mjs scripts/*.zsh ~/.claude/scripts/
+chmod +x ~/.claude/scripts/*.sh ~/.claude/scripts/*.mjs ~/.claude/scripts/*.zsh
 cp commands/*.md ~/.claude/commands/
 
 cp CLAUDE.md.example ~/.claude/CLAUDE.md   # puis édite-le
