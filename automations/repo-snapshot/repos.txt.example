@@ -1,0 +1,4 @@
+# Un chemin de repo git par ligne. Les lignes commençant par # sont ignorées.
+# Copie ce fichier vers ~/.claude/repo-snapshot/repos.txt puis remplace par tes repos.
+~/Developer/mon-premier-projet
+~/Developer/mon-second-projet

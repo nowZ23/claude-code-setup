@@ -15,6 +15,9 @@ Ce n'est pas un plugin clé en main : ce sont des fichiers à copier dans `~/.cl
 | Plugins | Marketplaces Obsidian et Notion pour Claude Code |
 | Statusline | Barre de statut avec usage/contexte en un coup d'œil |
 | Navigateur isolé | Règle pour ne jamais mélanger l'automatisation browser avec ton Chrome perso |
+| Automatisations | Tâches planifiées (launchd) : synchro, snapshot git, rappels, veille de prix |
+| Squelette de vault | Structure de départ du vault, notes modèles |
+| Skills | Où trouver les skills utiles et comment les installer |
 
 ## 1. Obsidian comme cerveau externe
 
@@ -70,6 +73,15 @@ Installation : ajoute à ton `~/.zshrc` :
 
 Usage : `claude "ma mission"` ou `claude @o ...` pour forcer Opus (`@s` Sonnet, `@h` Haiku), `claude !x ...` pour forcer l'effort. `claude-route "texte"` affiche le choix sans rien lancer. Les mots-clés (FR/EN) sont dans le script : adapte-les à tes propres tâches.
 
+## 4 ter. Automatisations planifiées
+
+Des scripts qui tournent seuls à heure fixe (launchd) : synchro hebdo d'une source avec mise à jour des notes par Claude, snapshot git nocturne, rappel d'objectif quotidien, veille de prix, lanceur de navigateur isolé. Tous sont génériques et se configurent par variables ou fichiers de config. Détail, installation et principes communs dans [`automations/`](automations/README.md).
+
+## 4 quater. Squelette de vault et skills
+
+- [`vault-template/`](vault-template/README.md) : la structure de départ du vault Obsidian, avec un `Self-Critique.md`, une note de voix et une note North Star vides à remplir.
+- [`skills/`](skills/README.md) : la liste des skills utiles et comment les installer. Leur contenu n'est pas copié ici, il appartient à leurs auteurs.
+
 ## 5. Plugins et marketplaces
 
 Ajoutés via `/plugin marketplace add` dans Claude Code :
@@ -108,6 +120,7 @@ mkdir -p ~/.claude/scripts ~/.claude/commands
 cp scripts/*.sh scripts/*.mjs scripts/*.zsh ~/.claude/scripts/
 chmod +x ~/.claude/scripts/*.sh ~/.claude/scripts/*.mjs ~/.claude/scripts/*.zsh
 cp commands/*.md ~/.claude/commands/
+cp -R automations vault-template ~/.claude/   # automatisations et modèles, à régler avant d'activer
 
 cp CLAUDE.md.example ~/.claude/CLAUDE.md   # puis édite-le
 

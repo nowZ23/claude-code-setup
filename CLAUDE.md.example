@@ -27,3 +27,11 @@ Avant toute action outillée (browser, fichiers, envoi, publication), charge la 
 ## Économie de la limite d'usage (règle permanente)
 
 Quand on change complètement de sujet en pleine session (nouveau projet sans rapport avec la conversation en cours), suggère en une ligne de faire `/clear` avant de continuer : le contexte accumulé est refacturé à chaque message et brûle la limite d'usage pour rien. Ne le suggère pas si le nouveau sujet dépend du contexte courant. Le vault Obsidian sert de mémoire entre les sessions, rien ne se perd.
+
+## Rappel calendrier pour chaque publication (règle permanente)
+
+Chaque fois que tu prépares une publication programmée (post, newsletter, envoi), crée dans la foulée un événement dans le calendrier, sans qu'on te le demande : titre `Publication : <sujet>`, à l'heure exacte prévue, alarme à l'heure même, et le texte complet à publier (ou le commentaire à poster juste après) dans les notes de l'événement. Si la date change, déplace l'événement. Vérifie par relecture de l'agenda sur une plage de dates précise, pas sur tous les événements.
+
+## Texte à copier-coller (règle permanente)
+
+Tout texte que l'utilisateur va **copier** (post, mail, message, lettre) se donne dans un **bloc de code** (triple backticks), jamais en citation `>` : les barres de citation se collent dans les traitements de texte. Pas de préfixe de ligne dans le texte. Les explications et les corrections restent hors du bloc.

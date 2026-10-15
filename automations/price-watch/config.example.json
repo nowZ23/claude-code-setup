@@ -1,0 +1,11 @@
+{
+  "mail_to": "",
+  "items": [
+    {
+      "name": "Exemple : article 1",
+      "url": "https://example.com/api/product/123.json",
+      "price_path": "data.price",
+      "target": 100.0
+    }
+  ]
+}

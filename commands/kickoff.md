@@ -1,5 +1,5 @@
 ---
-description: "Cadre un nouveau projet AVANT de coder : scope (in/out), arborescence de dossiers, README squelette, checklist de déploiement, et crée la note projet dans le vault."
+description: "Cadre un nouveau projet AVANT de coder : scope (in/out), arborescence de dossiers, README squelette, checklist de déploiement et crée la note projet dans le vault."
 ---
 
 Cadre le projet **avant** de produire quoi que ce soit. Sujet dans `$ARGUMENTS` ; si vide, demande en une ligne « c'est quoi le projet ? » (nom + en une phrase ce que ça fait).
